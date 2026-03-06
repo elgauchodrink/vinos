@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gaucho Drink - Catálogo de Bebidas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="barra-navegacion">
+      <a href="#" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+        <img
+          src="imagenes/logo.png"
+          alt="Logo El Gaucho Drink"
+          class="nav-logo-img"
+        />
+      </a>
+
+      <div class="enlaces-internos">
+        <button class="btn-interno" onclick="mostrarSeccion('marcas')">
+          Catálogo
+        </button>
+        <button class="btn-interno" onclick="mostrarSeccion('nosotros')">
+          Quiénes Somos
+        </button>
+        <button class="btn-interno" onclick="mostrarSeccion('contacto')">
+          Contacto
+        </button>
+      </div>
+
+      <button class="boton-carrito" onclick="toggleCarrito()">
+        🛒 <span id="contador-carrito">0</span>
+      </button>
+    </nav>
+
+    <main class="contenedor-principal">
+      <section id="inicio" class="seccion-activa">
+        <header class="encabezado-hero">
+          <div class="hero-overlay">
+            <h1 class="encabezado-titulo">El Gaucho Drink</h1>
+            <p class="encabezado-subtitulo">Tradición y estilo en cada copa.</p>
+            <h2 class="frase-dorada">Los mejores productos al mejor precio</h2>
+            <a href="#menu-tarjetas" class="flecha-abajo">↓</a>
+          </div>
+        </header>
+
+        <div id="menu-tarjetas" class="inicio-catalogo-teaser">
+          <h2 class="catalogo-titulo-seccion">Nuestra Cava</h2>
+          <div class="teaser-grilla">
+            <div class="tarjeta-teaser" onclick="mostrarSeccion('marcas')">
+              <div class="imagen-tarjeta img-catalogo"></div>
+              <h3>Catálogo</h3>
+            </div>
+            <div class="tarjeta-teaser" onclick="mostrarSeccion('nosotros')">
+              <div class="imagen-tarjeta img-nosotros"></div>
+              <h3>Quiénes Somos</h3>
+            </div>
+            <div class="tarjeta-teaser" onclick="mostrarSeccion('contacto')">
+              <div class="imagen-tarjeta img-contacto"></div>
+              <h3>Contacto</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros" class="seccion-oculta">
+        <h2 class="catalogo-titulo-seccion">Quiénes Somos</h2>
+        <div class="contenido-texto">
+          <p>
+            Somos <strong>El Gaucho Drink</strong>, apasionados por el buen
+            beber y la tradición. Nos dedicamos a acercarte la mejor selección
+            de vinos, espumantes y destilados directo a tu mesa, garantizando
+            calidad, excelente precio y una atención personalizada.
+          </p>
+        </div>
+      </section>
+
+      <section id="contacto" class="seccion-oculta">
+        <h2 class="catalogo-titulo-seccion">Contacto</h2>
+        <div class="contenido-texto grilla-contacto">
+          <div class="tarjeta-contacto">
+            <h3 class="texto-bordo">📱 Celulares</h3>
+            <p>Contactos de Atención:</p>
+            <ul
+              id="lista-telefonos"
+              style="list-style: none; padding: 0; margin-top: 15px"
+            ></ul>
+          </div>
+          <div class="tarjeta-contacto">
+            <h3 class="texto-bordo">💬 Redes y Mensajería</h3>
+            <p>Instagram: <a id="link-ig" href="#" target="_blank"></a></p>
+            <p>
+              WhatsApp:
+              <a id="link-wpp-directo" href="#" target="_blank"
+                >Enviar mensaje directo</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="marcas" class="seccion-oculta">
+        <h2 class="catalogo-titulo-seccion">Nuestras Marcas</h2>
+        <div id="grilla-marcas" class="catalogo-grilla"></div>
+      </section>
+
+      <section id="productos" class="seccion-oculta">
+        <div class="contenedor-boton-volver">
+          <button class="boton-volver" onclick="mostrarSeccion('marcas')">
+            ← Volver a Marcas
+          </button>
+          <div class="contenedor-titulo-productos">
+            <h2 class="catalogo-titulo-seccion" id="titulo-marca-seleccionada">
+              Productos
+            </h2>
+          </div>
+        </div>
+        <div id="grilla-productos" class="catalogo-grilla"></div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>
+        &copy; 2026 <strong>El Gaucho Drink</strong>. Todos los derechos
+        reservados.
+      </p>
+    </footer>
+
+    <aside id="panel-carrito" class="carrito-oculto">
+      <div class="carrito-header">
+        <h3>Tu Carrito</h3>
+        <button class="cerrar-carrito" onclick="toggleCarrito()">✖</button>
+      </div>
+      <div id="lista-carrito" class="carrito-items"></div>
+      <div class="carrito-footer">
+        <button class="boton-wpp-carrito" onclick="enviarPedidoWhatsApp()">
+          Consultar por WhatsApp
+        </button>
+      </div>
+    </aside>
+
+    <script src="productos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

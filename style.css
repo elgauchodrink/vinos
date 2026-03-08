@@ -52,10 +52,10 @@ body {
     color: var(--color-texto-principal);
     padding-top: 0; 
     
-    /* NUEVO: Flexbox para el Sticky Footer */
+    /* Flexbox para el Sticky Footer */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* El alto mínimo es el 100% de la pantalla */
+    min-height: 100vh;
 }
 
 /* =========================================
@@ -101,7 +101,6 @@ body {
     border: none;
 }
 
-/* EFECTO HOVER UNIVERSAL PARA BOTONES PRINCIPALES */
 .boton-carrito:hover,
 .boton-primario:hover,
 .boton-volver:hover,
@@ -113,7 +112,6 @@ body {
     filter: brightness(1.05); 
 }
 
-/* Estilos específicos de cada botón */
 .boton-carrito {
     background-color: var(--color-dorado-gaucho);
     color: var(--color-crema-fondo); 
@@ -154,7 +152,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* NUEVO: Oculta los botones si estamos en la sección inicio */
 body[data-seccion-activa="inicio"] .enlaces-internos {
     display: none;
 }
@@ -176,8 +173,6 @@ body[data-seccion-activa="inicio"] .enlaces-internos {
     max-width: 1200px; 
     margin: 0 auto; 
     padding: 0 20px 40px; 
-    
-    /* NUEVO: Esto le dice al contenedor que se estire y empuje al footer */
     flex-grow: 1; 
     width: 100%;
 }
@@ -250,15 +245,10 @@ section:not(#inicio) { padding-top: 140px; }
     width: 100%; 
     height: 200px;
     object-fit: cover;
-    
-    /* ACÁ ESTÁ EL CAMBIO: 'contain' evita que se corte, y le damos un poco de margen interno con 80% si querés que sea más chica */
     background-size: contain; 
     background-position: center; 
     background-repeat: no-repeat;
-    
-    /* Le agregamos fondo blanco por si la imagen es más angosta que la tarjeta, para que no quede transparente */
     background-color: var(--color-blanco);
-    
     border-bottom: 5px solid var(--color-bordo-vino);
 }
 .img-catalogo { background-image: var(--img-tarjeta-catalogo); }
@@ -274,6 +264,12 @@ section:not(#inicio) { padding-top: 140px; }
     font-family: var(--fuente-titulos); text-align: center;
     font-size: 2.8rem; margin-bottom: 20px; color: var(--color-bordo-oscuro); 
 }
+
+.catalogo-venta-por-cajas{
+    font-family: var(--fuente-titulos); text-align: center;
+    font-size: 1.7rem; margin-bottom: 30px; color: var(--color-bordo-claro);
+}
+
 #inicio .catalogo-titulo-seccion { margin-top: 20px; }
 
 .catalogo-grilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -290,7 +286,6 @@ section:not(#inicio) { padding-top: 140px; }
 .tarjeta-producto { display: flex; flex-direction: column; height: 100%; cursor: default;}
 .producto-nombre { font-family: var(--fuente-titulos); font-size: 1.3rem; margin-bottom: 25px; color: var(--color-texto-principal);}
 
-/* Ajuste contenedor boton volver para productos */
 .contenedor-boton-volver {
     display: flex; margin-bottom: 20px; align-content: center;
     flex-wrap: wrap; flex-direction: column; align-items: flex-start;
@@ -325,7 +320,6 @@ section:not(#inicio) { padding-top: 140px; }
 }
 .carrito-footer { padding: 20px; border-top: 2px solid var(--color-borde); background: var(--color-blanco); }
 
-/* Controles de cantidad */
 .control-cantidad { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
 .btn-cantidad {
     background-color: var(--color-crema-oscuro); color: var(--color-bordo-oscuro);
@@ -346,20 +340,6 @@ section:not(#inicio) { padding-top: 140px; }
 }
 .tarjeta-contacto a { color: var(--color-dorado-oscuro); font-weight: bold; text-decoration: none;}
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .nav-logo-link { height: 80px; } 
-    .barra-navegacion { padding: 10px 15px; }
-    /* Ocultamos los enlaces internos en mobile para que no rompan el header */
-    .enlaces-internos { display: none; }
-    .encabezado-titulo { font-size: 3rem; }
-    .frase-dorada { font-size: 1.6rem; }
-    .hero-overlay { padding-top: 120px; }
-    .grilla-contacto { grid-template-columns: 1fr; }
-    #panel-carrito { width: 100%; right: -100%; }
-    section:not(#inicio) { padding-top: 100px; } 
-}
-
 /* =========================================
    PIE DE PÁGINA (FOOTER)
    ========================================= */
@@ -369,19 +349,89 @@ section:not(#inicio) { padding-top: 140px; }
     text-align: center;
     padding: 25px 20px;
     font-size: 0.95rem;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.15); /* Sombra suave hacia arriba */
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.15); 
     position: relative;
-    z-index: 50; /* Para que quede por encima de otros fondos */
+    z-index: 50; 
 }
 
-.pie-pagina p {
-    margin: 0;
-    opacity: 0.9;
-    color: var(--color-bordo-oscuro);
+.pie-pagina p { margin: 0; opacity: 0.9; color: var(--color-bordo-oscuro); }
+.pie-pagina strong { font-family: var(--fuente-titulos); font-size: 1.1rem; font-weight: normal; }
+
+/* =========================================
+   MOBILE (CON BARRA INFERIOR APP)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-logo-link { height: 80px; } 
+    .barra-navegacion { padding: 10px 15px; }
+    
+    /* ACÁ ESTÁ LA MAGIA: Convertimos los botones en una barra inferior */
+    .enlaces-internos { 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-crema-fondo);
+        padding: 10px 5px;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+        z-index: 150;
+        justify-content: space-evenly;
+        gap: 5px;
+        border-top: 1px solid var(--color-dorado-gaucho);
+    }
+
+    .btn-interno {
+        font-size: 0.85rem;
+        padding: 8px 5px;
+        flex: 1; /* Hace que los botones se estiren y ocupen el mismo espacio */
+        text-align: center;
+    }
+    
+    /* Le damos un poco más de margen al footer para que la barra flotante no lo tape */
+    .pie-pagina { padding-bottom: 75px; }
+
+    .encabezado-titulo { font-size: 3rem; }
+    .frase-dorada { font-size: 1.6rem; }
+    .hero-overlay { padding-top: 120px; }
+    .grilla-contacto { grid-template-columns: 1fr; }
+    #panel-carrito { width: 100%; right: -100%; }
+    section:not(#inicio) { padding-top: 100px; } 
 }
 
-.pie-pagina strong {
-    font-family: var(--fuente-titulos);
+.producto-precio {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-dorado-oscuro);
+    margin-bottom: 20px;
+}
+
+.producto-precio-consultar {
     font-size: 1.1rem;
-    font-weight: normal;
+    font-style: italic;
+    color: var(--color-texto-secundario);
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   IMÁGENES DE PRODUCTOS
+   ========================================= */
+.contenedor-img-producto {
+    width: 100%;
+    height: 180px; /* Alto fijo para que todas las tarjetas midan igual */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-blanco);
+}
+
+.img-producto {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Evita que la imagen se estire o se corte */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse por la tarjeta */
+.tarjeta-producto:hover .img-producto {
+    transform: scale(1.08);
 }

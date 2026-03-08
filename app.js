@@ -16,12 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenedorTelefonos = document.getElementById('lista-telefonos');
     contenedorTelefonos.innerHTML = ''; // Lo limpiamos por las dudas
     
-    // Recorrer la lista de teléfonos y crear una fila para cada uno
+    // Recorrer la lista de teléfonos y crear un enlace de WhatsApp para cada uno
     CONFIGURACION.telefonosVentas.forEach(telefono => {
-        contenedorTelefonos.innerHTML += `<li style="margin-bottom: 8px;"><strong>${telefono}</strong></li>`;
+        // Limpiamos el número: sacamos espacios, guiones y el '+'
+        const numeroLimpio = telefono.replace(/\D/g, ''); 
+        
+        // Creamos la fila de la lista, inyectando un enlace <a> con el link de "wa.me"
+        contenedorTelefonos.innerHTML += `
+            <li style="margin-bottom: 12px;">
+                <a href="https://wa.me/${numeroLimpio}" target="_blank" title="Enviar WhatsApp a ${telefono}">
+                    📞 ${telefono}
+                </a>
+            </li>
+        `;
     });
     
-    // Enlaces de Instagram y WhatsApp
+    // Enlaces de Instagram y WhatsApp directo
     const linkIg = document.getElementById('link-ig');
     linkIg.innerText = CONFIGURACION.instagramUsuario;
     linkIg.href = CONFIGURACION.instagramEnlace;
@@ -84,9 +94,21 @@ function verProductosDeMarca(marcaSeleccionada) {
     productosFiltrados.forEach(prod => {
         const div = document.createElement('div');
         div.className = 'tarjeta tarjeta-producto';
+        
+        let precioHTML = prod.precio && prod.precio !== "-" 
+            ? `<p class="producto-precio">$${prod.precio}</p>` 
+            : `<p class="producto-precio-consultar">Consultar precio</p>`;
+            
+        // NUEVO: Si el producto tiene 'imagen', la usa. Si no, usa una genérica.
+        const imagenUrl = prod.imagen ? prod.imagen : 'imagenes/botella-generica.png';
+            
         div.innerHTML = `
+            <div class="contenedor-img-producto">
+                <img src="${imagenUrl}" alt="${prod.nombre}" class="img-producto">
+            </div>
             <h3 class="producto-nombre">${prod.nombre}</h3>
-            <button class="boton-primario" onclick="agregarAlCarrito(${prod.id})">Agregar a la consulta</button>
+            ${precioHTML}
+            <button class="boton-primario" onclick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
         `;
         contenedor.appendChild(div);
     });

@@ -343,7 +343,6 @@ body {
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
-    margin-bottom:28px;
 }
 
 .sw-item{
@@ -395,6 +394,29 @@ body {
 /* Ocultar por defecto en el inicio (manejado por JS más abajo) */
 .nav-main-links.hidden {
     display: none;
+}
+
+@media(max-width:900px){
+    .brands-section,.catena-showcase,.rutini-showcase,.luigi-showcase,.featured-section,.contact-section{
+        padding:64px 20px;
+    }
+
+    .showcase-inner{
+        grid-template-columns: 1fr;
+        gap:36px;
+    }
+
+    .showcase-inner.rev{
+        direction:ltr;
+    }
+
+    .hero-stats{
+        gap:28px;
+    }
+
+    .hero-stats .n{
+        font-size: 2rem;
+    }
 }
 
 /* Responsive: De Tablet para abajo (aprox 768px) */

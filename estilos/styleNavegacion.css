@@ -33,6 +33,11 @@
     --bg-hero: url("/imagenes/ilustraciones/familia.jpeg");
 }
 
+.nav-links a.active-link {
+    color: var(--gold-main);
+    font-weight: bold;
+}
+
 html {
     scroll-behavior: smooth; 
 }

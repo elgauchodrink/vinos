@@ -4,6 +4,30 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     inicializarCatalogo();
+    
+    // Lógica para capturar el filtro desde la URL
+    const hash = window.location.hash.replace('#', '').toUpperCase();
+    
+    if (hash) {
+        // Buscamos el botón que corresponde a esa categoría
+        const botones = document.querySelectorAll('.fbtn');
+        let botonEncontrado = null;
+
+        botones.forEach(btn => {
+            // Verificamos si el texto del botón o el argumento de su onclick coinciden
+            if (btn.getAttribute('onclick').includes(hash)) {
+                botonEncontrado = btn;
+            }
+        });
+
+        // Si encontramos el botón, ejecutamos el filtro
+        if (botonEncontrado) {
+            filtrarCatalogo(hash, botonEncontrado);
+            
+            // Opcional: Scroll suave hacia la sección de marcas para que el usuario vea el resultado
+            document.getElementById('marcas').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 });
 
 function inicializarCatalogo() {

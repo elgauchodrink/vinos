@@ -1,5 +1,6 @@
 // Aquí cargás los productos.
 const productosData = [
+    // CATENA
     // LINEA ALAMOS
     { id: 1, marca: "LINEA ALAMOS", nombre: "Alamos Malbec Reserva", precio: "6.615,00" },
     { id: 2, marca: "LINEA ALAMOS", nombre: "Alamos Pinot Reserva", precio: "6.615,00" },
@@ -175,9 +176,6 @@ const productosData = [
     { id: 144, marca: "LOLA MONTES", nombre: "Lola Montes Malbec", precio: "4.500,00" },
     { id: 145, marca: "LOLA MONTES", nombre: "Lola Montes Dulce Terroir", precio: "4.500,00" },
 
-    // FERNET BRANCA
-    { id: 146, marca: "FERNET BRANCA", nombre: "FERNET 750", precio: "-" },
-
     // LAURA CATENA
     { id: 147, marca: "LAURA CATENA", nombre: "Caro", precio: "143.700,00" },
     { id: 148, marca: "LAURA CATENA", nombre: "Caro Magnum", precio: "407.200,00" },
@@ -301,35 +299,6 @@ const productosData = [
     { id: 258, marca: "JORGE RUBIO", nombre: "PRIVADO RESERVA PINOT", precio: "8.100,00" },
     { id: 259, marca: "JORGE RUBIO", nombre: "PRIVADO GRAN RESERVA", precio: "14.800,00" },
 
-    // ACEITES Y ACETO
-    { id: 260, marca: "ACEITES Y ACETO", nombre: "LAUR BIDON 2 LTS", precio: "-" },
-    { id: 261, marca: "ACEITES Y ACETO", nombre: "LAUR ACEITE VIRGEN EXTRA GRAN MENDOZA VIDRIO 6×500 ML", precio: "-" },
-    { id: 262, marca: "ACEITES Y ACETO", nombre: "LAUR EXTRA VIRGEN 1 LT", precio: "-" },
-    { id: 263, marca: "ACEITES Y ACETO", nombre: "LAUR EXTRA VIRGEN 500 CC", precio: "-" },
-    { id: 264, marca: "ACEITES Y ACETO", nombre: "LAUR EXTRA VIRGEN BOTELLA DE VIDRIO 250 CC", precio: "-" },
-    { id: 265, marca: "ACEITES Y ACETO", nombre: "LAUR LATA ACEITE BLEND DE TERROIR 500 CC", precio: "-" },
-    { id: 266, marca: "ACEITES Y ACETO", nombre: "LAUR LATA TERROIR CRUZ DE PIEDRA 500 CC", precio: "-" },
-    { id: 267, marca: "ACEITES Y ACETO", nombre: "LAUR ACETO CREMOSO PICANTE", precio: "-" },
-    { id: 268, marca: "ACEITES Y ACETO", nombre: "LAUR ACETO BALSAMICO CREMOSO AHUMADO X 250 ML", precio: "-" },
-    { id: 269, marca: "ACEITES Y ACETO", nombre: "LAUR ACETO BALSAMICO CREMOSO ITALIANO AMARGO X 250 ML", precio: "-" },
-    { id: 270, marca: "ACEITES Y ACETO", nombre: "LAUR ACETO BALSAMICO MILLAN 250 ML", precio: "-" },
-    { id: 271, marca: "ACEITES Y ACETO", nombre: "LAUR EXTRA VIRGEN ALTO EN POLIFENOLES CON ESTUCHE", precio: "-" },
-    { id: 272, marca: "ACEITES Y ACETO", nombre: "LAUR LATA TERROIR MEDRANO EXTRA VIRGEN 500 CC", precio: "-" },
-    { id: 273, marca: "ACEITES Y ACETO", nombre: "ACEITE DE OLIVA GRAN LAUR 750 ML", precio: "-" },
-    { id: 274, marca: "ACEITES Y ACETO", nombre: "LAUR EXTRA VIRGEN BAG IN BOX 2000 CC", precio: "-" },
-    { id: 275, marca: "ACEITES Y ACETO", nombre: "LA FLOR ACEITE 500 CC", precio: "-" },
-    { id: 276, marca: "ACEITES Y ACETO", nombre: "ZUCCARDI GENOVESA 500 ML", precio: "-" },
-    { id: 277, marca: "ACEITES Y ACETO", nombre: "ZUCCARDI ARAUCO nuevo arte 500 ML", precio: "-" },
-    { id: 278, marca: "ACEITES Y ACETO", nombre: "ZUCCARDI PICUAL 500 ML", precio: "-" },
-    { id: 279, marca: "ACEITES Y ACETO", nombre: "ZUCCARDI CORATINA 500 ML", precio: "-" },
-    { id: 280, marca: "ACEITES Y ACETO", nombre: "ANGELO", precio: "-" },
-    { id: 281, marca: "ACEITES Y ACETO", nombre: "ZUELO ORIGINAL 500 ml", precio: "-" },
-    { id: 282, marca: "ACEITES Y ACETO", nombre: "ZUELO SUAVE BOT 500 ml", precio: "-" },
-    { id: 283, marca: "ACEITES Y ACETO", nombre: "ZUELO ORGANICO BOT 500 ml", precio: "-" },
-    { id: 284, marca: "ACEITES Y ACETO", nombre: "ZUELO ORIGINAL 250 ml", precio: "-" },
-    { id: 285, marca: "ACEITES Y ACETO", nombre: "ZUELO ORGANICO 250 ml", precio: "-" },
-    { id: 286, marca: "ACEITES Y ACETO", nombre: "ZUELO ORIGINAL LATA CILINDRICA 1 lt", precio: "-" },
-
     // PEÑAFLOR
     { id: 287, marca: "PEÑAFLOR", nombre: "TRAPICHE RESERVA", precio: "6.800,00" },
     { id: 288, marca: "PEÑAFLOR", nombre: "TRAPICHE MEDALLA", precio: "13.600,00" },
@@ -372,9 +341,6 @@ const productosData = [
     { id: 319, marca: "PASCUAL TOSO", nombre: "PASCUAL TOSO ESTATE CAB SAUV", precio: "5.100,00" },
     { id: 320, marca: "PASCUAL TOSO", nombre: "PASCUAL TOSO ESTATE RED BLEND", precio: "5.100,00" },
     { id: 321, marca: "PASCUAL TOSO", nombre: "TOSO ESPUMANTE ROSE", precio: "8.100,00" },
-
-    // CERVEZAS
-    { id: 322, marca: "CERVEZAS", nombre: "PERONI ITALIANA 🇮🇹 330 ML PACK X 24", precio: "-" },
 
     //PULENTA
     { id: 323, marca: "PULENTA", nombre: "LA ZULEMA MALBEC", precio: "4.900,00" },

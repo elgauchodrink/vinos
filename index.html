@@ -8,7 +8,12 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/estilos/styleNavegacion.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/estilos/styleIndex.css" type="text/css" />
   </head>
   <body>
     <header>
@@ -16,7 +21,7 @@
       <nav class="nav-container">
         <a href="" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
           <img
-            src="imagenes/logo.png"
+            src="/imagenes/logo.png"
             alt="Logo El Gaucho Drink"
             class="nav-logo-img"
           />
@@ -24,18 +29,19 @@
 
         <ul class="nav-links nav-main-links" id="main-nav-links">
           <li>
-            <a href="catalogo" onclick="mostrarSeccion('catalogo')">Catálogo</a>
+            <a href="/webs/catalogo.html" onclick="mostrarSeccion('catalogo')"
+              >Catálogo</a
+            >
           </li>
           <li>
-            <a href="catena" onclick="mostrarSeccion('catena')">Catena</a>
-          </li>
-          <li>
-            <a href="nosotros" onclick="mostrarSeccion('nosotros')"
+            <a href="/webs/nosotros.html" onclick="mostrarSeccion('nosotros')"
               >Quiénes Somos</a
             >
           </li>
           <li>
-            <a href="contacto" onclick="mostrarSeccion('contacto')">Contacto</a>
+            <a href="/webs/contacto.html" onclick="mostrarSeccion('contacto')"
+              >Contacto</a
+            >
           </li>
         </ul>
 
@@ -64,13 +70,13 @@
             </p>
             <div class="hero-btns">
               <a
-                href="catalogo"
+                href="/webs/catalogo.html"
                 onclick="mostrarSeccion('catalogo')"
                 class="btn-gold"
                 >Ver Catálogo</a
               >
               <a
-                href="contacto"
+                href="/webs/contacto.html"
                 onclick="mostrarSeccion('contacto')"
                 class="btn-ghost"
                 >Contactar Vendedor</a
@@ -94,6 +100,7 @@
         </div>
       </section>
 
+      <!-- SHOWCASE -->
       <section id="showcases-container"></section>
     </main>
   </body>

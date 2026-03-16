@@ -1,132 +1,7 @@
 /* =========================================
-   NUEVO ESTILO HERO PREMIUM
-   ========================================= */
-
-:root {
-    /* Paleta de Colores */
-    --gold-main: #c9a84c;
-    --gold-light: #e8c96d;
-    --gold-dark: #8a6d2f;
-    --bg-dark: #0a0a0a;
-    --bg-card: #111111;
-    --white: #ffffff;
-    --text: #e0d5c0;
-    --text-muted: #ffffff99;
-    --transparent: transparent;
-    --overlay-gradient: linear-gradient(to bottom, rgba(10, 8, 4, 0.3) 0%, rgba(10, 8, 4, 0.85) 100%);
-
-    /* Tipografías */
-    --font-primary: 'Lato', sans-serif;
-    --font-accent: 'Cinzel', serif;
-    --font-classic: 'Cormorant Garamond', serif;
-
-    /* Espaciados y Bordes */
-    --gap-stats: 60px;
-    --transition-fast: 0.3s ease;
-
-    /* Imagenes */
-    --img-family: url("/imagenes/ilustraciones/familia.jpeg");
-    --img-country: url("/imagenes/ilustraciones/campo.jpeg");
-    --img-scene: url("/imagenes/ilustraciones/escena.jpeg");
-
-    /* Fondos */
-    --bg-hero: url("/imagenes/ilustraciones/familia.jpeg");
-}
-
-html { 
-    scroll-behavior: smooth; 
-}
-
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-}
-
-body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-dark);
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* =========================================
-   NAVEGACIÓN
-   ========================================= */
-.nav-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--transparent);
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 0px 30px;
-}
-
-.nav-logo-link { 
-    display: flex; 
-    align-items: center; 
-    text-decoration: none; 
-    height: 120px; 
-}
-
-.nav-logo-img {
-    height: 100%; 
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(2px 4px 6px #0000004d); 
-    transition: transform 0.3s ease;
-}
-
-.nav-logo-img:hover {
-    transform: scale(1.05);
-}
-
-.nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-}
-
-.nav-links a{
-    color:var(--text-muted);
-    text-decoration: none;
-    font-family: var(--font-accent);
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    transition: .3s;
-}
-
-.nav-links a:hover{
-    color: var(--gold-light);
-}
-
-.button-cart{
-    background: var(--bg-dark);
-    border: 1px solid var(--gold-main);
-    color: var(--gold-main);
-    padding: 8px 22px;
-    font-family: var(--font-accent);
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: .3s;
-}
-.button-cart:hover{
-    background: var(--gold-main);
-    color: var(--bg-dark);
-}
-
-/* =========================================
    HERO
    ========================================= */
+
 .hero{
     min-height: 100vh;
     display: flex;
@@ -303,6 +178,7 @@ body {
 .showcase-inner.rev{
     direction: rtl;
 }
+
 .showcase-inner.rev > *{
     direction: ltr;
 }
@@ -390,11 +266,6 @@ body {
    RESPONSIVE
    ========================================= */
 
-/* Ocultar por defecto en el inicio (manejado por JS más abajo) */
-.nav-main-links.hidden {
-    display: none;
-}
-
 @media(max-width:900px){
     .brands-section,.catena-showcase,.rutini-showcase,.luigi-showcase,.featured-section,.contact-section{
         padding:64px 20px;
@@ -415,32 +286,6 @@ body {
 
     .hero-stats .n{
         font-size: 2rem;
-    }
-}
-
-/* Responsive: De Tablet para abajo (aprox 768px) */
-@media (max-width: 768px) {
-    .nav-main-links {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-card); /* Fondo oscuro para que se vea */
-        padding: 15px 0;
-        margin: 0;
-        justify-content: center; /* Centra los links */
-        border-top: 1px solid var(--gold-dark);
-        gap: 15px; /* Menos espacio en móvil */
-    }
-
-    .nav-links a {
-        font-size: 10px; /* Un poco más pequeño para que quepa todo */
-        letter-spacing: 1px;
-    }
-    
-    /* Evitar que el contenido del pie de página choque con el menú */
-    body {
-        padding-bottom: 60px; 
     }
 }
 

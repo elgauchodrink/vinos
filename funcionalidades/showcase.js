@@ -8,7 +8,7 @@ const configuracionShowcases = [
         desc: 'Fundada en 1902, Catena Zapata es la bodega argentina más galardonada del mundo. Desde sus viñedos de altura en Mendoza, produce los malbecs que definen Argentina en el mundo.',
         productos: [48, 49, 50, 33, 22, 1],
         claseExtra: '', // Normal
-        imagenes: ['escena.jpeg', 'familia.jpeg', 'campo.jpeg']
+        imagenes: ['/catena/bodega.jpeg', '/catena/brindar.jpeg', '/catena/logo.jpg']
     },
     {
         id: 'rutini',
@@ -17,7 +17,7 @@ const configuracionShowcases = [
         desc: 'Desde 1885, Rutini elabora vinos de carácter único en el Valle de Uco. Su colección abarca desde el accesible Trumpeter hasta el sublime Apartado.',
         productos: [101, 100, 96, 91, 104, 106],
         claseExtra: 'rev', // Invertido
-        imagenes: ['escena.jpeg', 'familia.jpeg', 'rutiniLogo.png']
+        imagenes: ['/rutini/escena.jpeg', '/rutini/posando.png', '/rutini/logo.png']
     },
     {
         id: 'luigi',
@@ -26,7 +26,7 @@ const configuracionShowcases = [
         desc: 'Una de las bodegas más antiguas y respetadas de Argentina. Luigi Bosca y su línea La Linda ofrecen vinos de carácter y elegancia única.',
         productos: [63, 62, 61, 57, 53, 66],
         claseExtra: '', // Normal
-        imagenes: ['escena.jpeg', 'familia.jpeg', 'campo.jpeg']
+        imagenes: ['/luigiBosca/vistas.jpg', '/luigiBosca/equilibrio.avif', '/luigiBosca/logo.png']
     }
 ];
 
@@ -54,7 +54,7 @@ function renderizarShowcases() {
                         <h2 class="sw-title">${bodega.titulo}</h2>
                         <p class="sw-desc">${bodega.desc}</p>
                         <div class="sw-products">${listaProductosHTML}</div>
-                        <a href="catalogo" class="btn-gold" onclick="mostrarSeccion('catalogo')">Ver Línea Completa</a>
+                        <a href="/webs/catalogo.html#${bodega.id}" class="btn-gold" onclick="mostrarSeccion('catalogo')">Ver Línea Completa</a>
                     </div>
                     <div class="sw-imgs">
                         <img src="/imagenes/ilustraciones/${bodega.imagenes[0]}" alt="Escena" />

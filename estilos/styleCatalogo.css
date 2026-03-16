@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .section-header{
@@ -69,7 +71,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(290px,1fr));
     gap: 20px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -175,9 +177,8 @@
    RESPONSIVE
    ========================================= */
 
-@media(max-width: 980px){
+@media(max-width: 386px){
     .brands-grid{
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: none;
     }
 }

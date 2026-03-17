@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>El Gaucho Drink - Catálogo</title>
+    <title>El Gaucho Drink - Sobre nosotros</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -13,7 +13,7 @@
       href="/estilos/styleNavegacion.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="/estilos/styleCatalogo.css" type="text/css" />
+    <link rel="stylesheet" href="/estilos/styleNosotros.css" type="text/css" />
   </head>
   <body>
     <header>
@@ -32,15 +32,15 @@
             <a href="/" onclick="mostrarSeccion('inicio')">Inicio</a>
           </li>
           <li>
-            <a
-              href="/webs/catalogo.html"
-              class="active-link"
-              onclick="mostrarSeccion('catalogo')"
+            <a href="/webs/catalogo.html" onclick="mostrarSeccion('catalogo')"
               >Catálogo</a
             >
           </li>
           <li>
-            <a href="/webs/nosotros.html" onclick="mostrarSeccion('nosotros')"
+            <a
+              href="/webs/nosotros.html"
+              class="active-link"
+              onclick="mostrarSeccion('nosotros')"
               >Quiénes Somos</a
             >
           </li>
@@ -56,39 +56,31 @@
         </button>
       </nav>
     </header>
+
     <main>
-      <section class="brands-section" id="marcas">
+      <section class="us-section" id="nosotros">
         <div class="section-header">
-          <p class="s-eyebrow">Portafolio completo</p>
-          <h2 class="s-title">Todas las Bodegas</h2>
+          <p class="s-eyebrow">Nuestra Herencia</p>
+          <h2 class="s-title">Quiénes Somos</h2>
           <div class="s-rule"></div>
         </div>
-
-        <div class="filter-bar">
-          <button class="fbtn active" onclick="filtrarCatalogo('all', this)">
-            Todas
-          </button>
-          <button class="fbtn" onclick="filtrarCatalogo('CATENA', this)">
-            Catena
-          </button>
-          <button class="fbtn" onclick="filtrarCatalogo('RUTINI', this)">
-            Rutini
-          </button>
-          <button class="fbtn" onclick="filtrarCatalogo('LUIGI', this)">
-            Luigi Bosca
-          </button>
-          <button class="fbtn" onclick="filtrarCatalogo('SOTTANO', this)">
-            Sottano
-          </button>
-          <button class="fbtn" onclick="filtrarCatalogo('SPIRITS', this)">
-            Spirits
-          </button>
+        <div class="section-body">
+          <p>
+            Somos <label class="company-name">El Gaucho Drink</label>,
+            apasionados por el buen beber y la tradición. Ofrecemos una
+            experiencia de compra mayorista con atención personalizada,
+            garantizando un stock constante y una logística impecable para que
+            lo único que usted deba hacer sea descorchar y disfrutar.
+          </p>
+          <img
+            src="/imagenes/logo.png"
+            alt="Logo El Gaucho Drink"
+            class="logo-img"
+          />
         </div>
-
-        <div class="brands-grid" id="brandsGrid"></div>
       </section>
     </main>
   </body>
+
   <script src="/funcionalidades/productos.js"></script>
-  <script src="/funcionalidades/catalogo.js"></script>
 </html>

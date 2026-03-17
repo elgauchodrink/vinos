@@ -33,11 +33,6 @@
     --bg-hero: url("/imagenes/ilustraciones/familia.jpeg");
 }
 
-.nav-links a.active-link {
-    color: var(--gold-main);
-    font-weight: bold;
-}
-
 html {
     scroll-behavior: smooth; 
 }
@@ -70,6 +65,10 @@ body {
     justify-content: space-between;
     align-items: center; 
     padding: 0px 30px;
+}
+
+.nav-background {
+    background-color: var(--bg-dark) !important;
 }
 
 .nav-logo-link { 
@@ -109,6 +108,11 @@ body {
 
 .nav-links a:hover{
     color: var(--gold-light);
+}
+
+.nav-links a.active-link {
+    color: var(--gold-main);
+    font-weight: bold;
 }
 
 .button-cart{

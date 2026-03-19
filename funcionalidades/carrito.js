@@ -86,7 +86,7 @@ function crearModalCarrito() {
                 </div>
                 <div id="cart-items-container"></div>
                 <div class="cart-footer">
-                    <p style="color: #c9a84c; font-size: 0.8rem; margin-bottom: 10px; text-align: center;">
+                    <p style="color: #c9a84c; font-size: 0.8rem; margin-bottom: 20px; text-align: center;">
                         * Los precios corresponden a la unidad, venta mínima 1 caja (6 botellas).
                     </p>
                     <div class="cart-total">Total (por cajas): <span id="cart-total-price">$0</span></div>

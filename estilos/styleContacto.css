@@ -60,7 +60,6 @@
 .cc{
     background: var(--bg-dark);
     border: 1px solid var(--gold-main);
-    border-radius: 20px;
     padding: 28px 26px;
     transition: .35s;
     overflow: hidden;

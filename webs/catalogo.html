@@ -73,24 +73,38 @@
           <button class="fbtn active" onclick="filtrarCatalogo('all', this)">
             Todas
           </button>
-          <button class="fbtn" onclick="filtrarCatalogo('CATENA', this)">
+          <button class="fbtn" onclick="filtrarCatalogo('catena', this)">
             Catena
           </button>
-          <button class="fbtn" onclick="filtrarCatalogo('RUTINI', this)">
+          <button class="fbtn" onclick="filtrarCatalogo('rutini', this)">
             Rutini
           </button>
-          <button class="fbtn" onclick="filtrarCatalogo('LUIGI', this)">
+          <button class="fbtn" onclick="filtrarCatalogo('luigi', this)">
             Luigi Bosca
           </button>
-          <button class="fbtn" onclick="filtrarCatalogo('SOTTANO', this)">
+          <button class="fbtn" onclick="filtrarCatalogo('sottano', this)">
             Sottano
           </button>
-          <button class="fbtn" onclick="filtrarCatalogo('SPIRITS', this)">
+          <button class="fbtn" onclick="filtrarCatalogo('spirits', this)">
             Spirits
           </button>
         </div>
 
         <div class="brands-grid" id="brandsGrid"></div>
+      </section>
+
+      <section class="seccion-oculta" id="productos-marca">
+        <div class="contenedor-boton-volver">
+          <div class="section-header">
+            <p class="s-eyebrow">Catalogo completo</p>
+            <h2 class="s-title" id="titulo-marca-seleccionada">Productos</h2>
+            <div class="s-rule"></div>
+          </div>
+          <button class="fbtn" onclick="volverAMarcas()">
+            ← Volver a Marcas
+          </button>
+        </div>
+        <div id="grilla-productos" class="brands-grid"></div>
       </section>
     </main>
 

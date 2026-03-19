@@ -1,21 +1,23 @@
-// app.js
+/**
+ * LÓGICA DEL CARRITO Y APP GLOBAL - ACTUALIZADO VENTA POR CAJA (x6)
+ */
 
 let carrito = JSON.parse(localStorage.getItem('carrito-gaucho')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
     actualizarContadorVisual();
-    renderizarCarritoUI(); // Si el modal está abierto al cargar
+    if (document.getElementById('modal-carrito')) {
+        renderizarCarritoUI();
+    }
 });
 
 // --- LÓGICA DE DATOS ---
 
-function agregarAlCarrito(id) {
-    // Buscamos el producto en productosData (que viene de productos.js)
+window.agregarAlCarrito = function(id) {
     const producto = productosData.find(p => p.id === id);
     
     if (!producto) return;
 
-    // Verificar si ya está en el carrito
     const existe = carrito.find(item => item.id === id);
 
     if (existe) {
@@ -28,7 +30,8 @@ function agregarAlCarrito(id) {
     }
 
     guardarYActualizar();
-}
+    toggleCarrito();
+};
 
 function cambiarCantidad(id, delta) {
     const producto = carrito.find(item => item.id === id);
@@ -63,7 +66,7 @@ function actualizarContadorVisual() {
 
 // --- LÓGICA DE INTERFAZ (UI) ---
 
-function toggleCarrito() {
+window.toggleCarrito = function() {
     let modal = document.getElementById('modal-carrito');
     if (!modal) {
         crearModalCarrito();
@@ -83,7 +86,10 @@ function crearModalCarrito() {
                 </div>
                 <div id="cart-items-container"></div>
                 <div class="cart-footer">
-                    <div class="cart-total">Total: <span id="cart-total-price">$0</span></div>
+                    <p style="color: #c9a84c; font-size: 0.8rem; margin-bottom: 10px; text-align: center;">
+                        * Los precios corresponden a la unidad, venta mínima 1 caja (6 botellas).
+                    </p>
+                    <div class="cart-total">Total (por cajas): <span id="cart-total-price">$0</span></div>
                     <button onclick="enviarWhatsApp()" class="btn-whatsapp">Finalizar Pedido por WhatsApp</button>
                 </div>
             </div>
@@ -98,53 +104,68 @@ function renderizarCarritoUI() {
     if (!container) return;
 
     if (carrito.length === 0) {
-        container.innerHTML = '<p class="empty-msg">El carrito está vacío.</p>';
+        container.innerHTML = '<p style="color: #888; text-align: center; margin-top: 2rem;">El carrito está vacío.</p>';
         totalDisplay.innerText = "$0";
         return;
     }
 
-    let total = 0;
+    let totalCajasCalculado = 0;
+
     container.innerHTML = carrito.map(item => {
-        // Limpiamos el precio para calcular (quitamos $ y puntos)
-        const precioLimpio = parseFloat(item.precio.replace(/\./g, '').replace(',', '.'));
-        if (!isNaN(precioLimpio)) {
-            total += precioLimpio * item.cantidad;
-        }
+        const precioUnitario = parseFloat(item.precio.replace(/\./g, '').replace(',', '.')) || 0;
+        const precioCaja = precioUnitario * 6;
+        totalCajasCalculado += precioCaja * item.cantidad;
 
         return `
             <div class="cart-item">
                 <div class="item-info">
                     <p class="item-name">${item.nombre}</p>
                     <p class="item-brand">${item.marca}</p>
-                    <p class="item-price">$${item.precio}</p>
+                    <p class="item-price">
+                        $${item.precio} <small style="color: #888;">(c/u)</small> 
+                        <br>
+                        <span style="color: #c9a84c; font-size: 0.8rem;">Caja x6: $${precioCaja.toLocaleString('es-AR')}</span>
+                    </p>
                 </div>
                 <div class="item-controls">
-                    <button onclick="cambiarCantidad(${item.id}, -1)">-</button>
-                    <span>${item.cantidad}</span>
-                    <button onclick="cambiarCantidad(${item.id}, 1)">+</button>
-                    <button onclick="eliminarDelCarrito(${item.id})" class="btn-remove">🗑️</button>
+                    <div id="quantity-controls-${item.id}" class="quantity-controls">
+                        <div style="text-align: center; margin-bottom: 5px; font-size: 0.7rem; color: #888;">Cajas</div>
+                        <div class="control-btns">
+                            <button onclick="cambiarCantidad(${item.id}, -1)">-</button>
+                            <span>${item.cantidad}</span>
+                            <button onclick="cambiarCantidad(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button onclick="eliminarDelCarrito(${item.id})" class="btn-remove" style="margin-top: 10px;">🗑️</button>
                 </div>
             </div>
         `;
     }).join('');
 
-    totalDisplay.innerText = `$${total.toLocaleString('es-AR')}`;
+    totalDisplay.innerText = `$${totalCajasCalculado.toLocaleString('es-AR')}`;
 }
 
 // --- ENVÍO A WHATSAPP ---
 
-function enviarWhatsApp() {
+window.enviarWhatsApp = function() {
     if (carrito.length === 0) return;
 
     const numeroTel = "5491176588135";
-    let mensaje = "Hola El Gaucho Drink! 🍷 Quisiera realizar el siguiente pedido:\n\n";
+    let mensaje = "Hola El Gaucho Drink! 🍷 Quisiera realizar el siguiente pedido (Venta por Caja cerrada x6):\n\n";
 
     carrito.forEach(item => {
-        mensaje += `• ${item.cantidad}x ${item.nombre} (${item.marca}) - $${item.precio}\n`;
+        const precioUnit = parseFloat(item.precio.replace(/\./g, '').replace(',', '.')) || 0;
+        const subtotalCaja = (precioUnit * 6) * item.cantidad;
+        
+        mensaje += `• *${item.cantidad} CAJA(S)* de: ${item.nombre}\n`;
+        mensaje += `  Marca: ${item.marca}\n`;
+        mensaje += `  Precio x caja: $${(precioUnit * 6).toLocaleString('es-AR')}\n`;
+        mensaje += `  Subtotal: $${subtotalCaja.toLocaleString('es-AR')}\n\n`;
     });
 
     const total = document.getElementById('cart-total-price').innerText;
-    mensaje += `\n*Total Estimado: ${total}*\n\nGracias!`;
+    mensaje += `*TOTAL DEL PEDIDO: ${total}*`;
+    mensaje += `\n\n_Entiendo que el precio mostrado en web es unitario y el pedido es por cajas de 6 botellas._`;
 
     const url = `https://api.whatsapp.com/send?phone=${numeroTel}&text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');

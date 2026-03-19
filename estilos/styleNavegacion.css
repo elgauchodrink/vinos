@@ -13,7 +13,6 @@
     --text: #e0d5c0;
     --text-muted: #ffffff99;
     --transparent: transparent;
-    --whatsapp-green: #25d366;
     --overlay-gradient: linear-gradient(to bottom, rgba(10, 8, 4, 0.3) 0%, rgba(10, 8, 4, 0.85) 100%);
 
     /* Tipografías */
@@ -199,9 +198,28 @@ main{
     border-bottom: 1px solid #333;
 }
 
+.item-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .item-name { color: var(--white); font-size: 0.9rem; margin: 0; }
 .item-brand { color: var(--gold-main); font-size: 0.75rem; font-style: italic; }
 .item-price { color: var(--white); font-weight: bold; font-size: 0.85rem; }
+
+.item-controls{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 20px;
+}
+
+.item-controls #quantity-controls{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 .item-controls button {
     background: var(--gold-main);
@@ -236,15 +254,13 @@ main{
 }
 
 .btn-whatsapp {
-    background: var(--gold-light);
-    color: var(--white);
-    border: none;
-    padding: 12px;
     width: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    text-transform: uppercase;
+    background-color: var(--gold-light);
+    color: var(--bg-dark);
+    border: none;
+    font-family: var(--font-accent), serif;
+    font-size: 14px;
+    padding: 10px;
 }
 
 /* =========================================

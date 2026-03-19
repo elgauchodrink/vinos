@@ -1,19 +1,20 @@
-/**
- * LÓGICA DINÁMICA DEL CATÁLOGO - El Gaucho Drink
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     inicializarCatalogo();
-    
+
     // Capturar filtro desde URL (ej: catalogo.html#CATENA)
     const hash = window.location.hash.replace('#', '').toUpperCase();
+
     if (hash) {
-        const botones = document.querySelectorAll('.fbtn');
-        botones.forEach(btn => {
-            if (btn.getAttribute('onclick').includes(hash)) {
-                filtrarCatalogo(hash, btn);
+        const botonEncontrado = document.querySelector(`.fbtn[data-filter="${hash}"]`);
+
+        if (botonEncontrado) {
+            filtrarCatalogo(hash, botonEncontrado);
+
+            const seccionMarcas = document.getElementById('marcas');
+            if (seccionMarcas) {
+                seccionMarcas.scrollIntoView({ behavior: 'smooth' });
             }
-        });
+        }
     }
 });
 
@@ -21,7 +22,6 @@ function inicializarCatalogo() {
     const grid = document.getElementById('brandsGrid');
     if (!grid) return;
 
-    // 1. Agrupamos por marca basándonos en la data
     const productosPorMarca = productosData.reduce((acc, producto) => {
         const marca = producto.marca || "OTRAS MARCAS";
         if (!acc[marca]) acc[marca] = [];
@@ -32,15 +32,13 @@ function inicializarCatalogo() {
     renderizarTarjetasMarcas(productosPorMarca, grid);
 }
 
-// RENDER NIVEL 1: Las tarjetas de las Bodegas
 function renderizarTarjetasMarcas(grupos, contenedor) {
     let html = '';
 
     for (const nombreMarca in grupos) {
         const productos = grupos[nombreMarca];
-        // Usamos la categoría que agregamos manualmente en productos.js
-        const categoriaFiltro = (productos[0].categoria || 'otros').toUpperCase();
-        
+        const categoriaFiltro = asignarCategoriaAutomaticamente(nombreMarca);
+
         html += `
             <div class="bcard" data-cat="${categoriaFiltro}" onclick="verDetalleMarca('${nombreMarca}')">
                 <div class="b-name">${nombreMarca}</div>
@@ -52,17 +50,26 @@ function renderizarTarjetasMarcas(grupos, contenedor) {
             </div>
         `;
     }
+
     contenedor.innerHTML = html;
 }
 
-// RENDER NIVEL 2: Mostrar productos de la marca elegida
+function asignarCategoriaAutomaticamente(marca) {
+    const m = marca.toUpperCase();
+    if (m.includes('ALAMOS') || m.includes('NICASIA') || m.includes('CATENA') || m.includes('ENEMIGO') || m.includes('SAINT FELICIEN') || m.includes('ANGELICA')) return 'CATENA';
+    if (m.includes('LUIGI') || m.includes('LINDA')) return 'LUIGI';
+    if (m.includes('RUTINI') || m.includes('TRUMPETER') || m.includes('ENCUENTRO') || m.includes('DOMINIO')) return 'RUTINI';
+    if (m.includes('SOTTANO')) return 'SOTTANO';
+    if (m.includes('GIN') || m.includes('VODKA') || m.includes('ACONCAGUA')) return 'SPIRITS';
+    return 'OTROS';
+}
+
 window.verDetalleMarca = function(nombreMarca) {
     const marcasSection = document.getElementById('marcas');
     const productosSection = document.getElementById('productos-marca');
     const titulo = document.getElementById('titulo-marca-seleccionada');
     const grilla = document.getElementById('grilla-productos');
 
-    // Filtrar productos de esa marca
     const filtrados = productosData.filter(p => p.marca === nombreMarca);
 
     titulo.innerText = nombreMarca;
@@ -81,7 +88,7 @@ window.verDetalleMarca = function(nombreMarca) {
             </button>
         </div>
     `).join('');
-    
+
     window.scrollTo(0, 0);
 };
 
@@ -95,26 +102,20 @@ function formatearPrecio(precio) {
     return precio.includes('$') ? precio : `$${precio}`;
 }
 
-// --- FILTROS ---
 window.filtrarCatalogo = function(categoriaFiltro, btn) {
-    // 1. Manejo visual de botones
     document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
 
-    // 2. Normalizamos el filtro a minúsculas
     const filtro = categoriaFiltro.toLowerCase();
-    
-    // 3. Obtenemos todas las tarjetas de marcas
-    const tarjetas = document.querySelectorAll('.bcard');
+    const tarjetas = document.querySelectorAll('#brandsGrid .bcard');
 
     tarjetas.forEach(card => {
-        // Obtenemos la categoría de la tarjeta (que inyectamos al crearla)
-        const catCard = card.getAttribute('data-cat').toLowerCase();
-        
+        const catCard = (card.getAttribute('data-cat') || '').toLowerCase();
+
         if (filtro === 'all' || catCard === filtro) {
-            card.style.display = "flex";
+            card.style.display = 'flex';
         } else {
-            card.style.display = "none";
+            card.style.display = 'none';
         }
     });
 };

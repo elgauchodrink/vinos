@@ -8,17 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="../estilos/styleNavegacion.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="../estilos/styleNosotros.css"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="../estilos/styleFooter.css" type="text/css" />
+    <link rel="stylesheet" href="styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="styleNosotros.css" type="text/css" />
+    <link rel="stylesheet" href="styleFooter.css" type="text/css" />
   </head>
   <body>
     <header>
@@ -26,7 +18,7 @@
       <nav class="nav-container nav-background">
         <a href="/" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
           <img
-            src="../imagenes/logos/marca.png"
+            src="./imagenes/logos/marca.png"
             alt="Logo El Gaucho Drink"
             class="nav-logo-img"
           />
@@ -37,20 +29,20 @@
             <a href="/" onclick="mostrarSeccion('inicio')">Inicio</a>
           </li>
           <li>
-            <a href="/webs/catalogo.html" onclick="mostrarSeccion('catalogo')"
+            <a href="catalogo.html" onclick="mostrarSeccion('catalogo')"
               >Catálogo</a
             >
           </li>
           <li>
             <a
-              href="/webs/nosotros.html"
+              href="nosotros.html"
               class="active-link"
               onclick="mostrarSeccion('nosotros')"
               >Quiénes Somos</a
             >
           </li>
           <li>
-            <a href="/webs/contacto.html" onclick="mostrarSeccion('contacto')"
+            <a href="contacto.html" onclick="mostrarSeccion('contacto')"
               >Contacto</a
             >
           </li>
@@ -81,7 +73,7 @@
             lo único que usted deba hacer sea descorchar y disfrutar.
           </p>
           <img
-            src="../imagenes/logos/marca.png"
+            src="./imagenes/logos/marca.png"
             alt="Logo El Gaucho Drink"
             class="logo-img"
           />
@@ -95,7 +87,7 @@
       <p>Vinos Mayorista · Buenos Aires · Argentina</p>
       <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
     </footer>
-    <script src="../funcionalidades/productos.js"></script>
-    <script src="../funcionalidades/carrito.js"></script>
+    <script src="productos.js"></script>
+    <script src="carrito.js"></script>
   </body>
 </html>

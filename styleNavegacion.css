@@ -25,12 +25,12 @@
     --transition-fast: 0.3s ease;
 
     /* Imagenes */
-    --img-family: url("/imagenes/ilustraciones/familia.jpeg");
-    --img-country: url("/imagenes/ilustraciones/campo.jpeg");
-    --img-scene: url("/imagenes/ilustraciones/escena.jpeg");
+    --img-family: url("./imagenes/ilustraciones/familia.jpeg");
+    --img-country: url("./imagenes/ilustraciones/campo.jpeg");
+    --img-scene: url("./imagenes/ilustraciones/escena.jpeg");
 
     /* Fondos */
-    --bg-hero: url("/imagenes/ilustraciones/familia.jpeg");
+    --bg-hero: url("./imagenes/ilustraciones/familia.jpeg");
 }
 
 html {

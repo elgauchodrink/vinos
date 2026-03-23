@@ -57,9 +57,9 @@ function renderizarShowcases() {
                         <a href="/webs/catalogo.html#${bodega.id.toUpperCase()}" class="btn-gold">Ver Línea Completa</a>
                     </div>
                     <div class="sw-imgs">
-                        <img src="/imagenes/ilustraciones/${bodega.imagenes[0]}" alt="Escena" />
-                        <img src="/imagenes/ilustraciones/${bodega.imagenes[1]}" alt="Familia" />
-                        <img class="big" src="/imagenes/ilustraciones/${bodega.imagenes[2]}" alt="Principal" />
+                        <img src="./imagenes/ilustraciones/${bodega.imagenes[0]}" alt="Escena" />
+                        <img src="./imagenes/ilustraciones/${bodega.imagenes[1]}" alt="Familia" />
+                        <img class="big" src="./imagenes/ilustraciones/${bodega.imagenes[2]}" alt="Principal" />
                     </div>
                 </div>
             </section>

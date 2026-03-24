@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gaucho Drink - Contacto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="styleContacto.css" type="text/css" />
+    <link rel="stylesheet" href="styleFooter.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <!-- NAV -->
+      <nav class="nav-container nav-background">
+        <a href="./" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+          <img
+            src="./imagenes/logos/marca.png"
+            alt="Logo El Gaucho Drink"
+            class="nav-logo-img"
+          />
+        </a>
+
+        <ul class="nav-links nav-main-links" id="main-nav-links">
+          <li>
+            <a href="./" onclick="mostrarSeccion('inicio')">Inicio</a>
+          </li>
+          <li>
+            <a href="catalogo.html" onclick="mostrarSeccion('catalogo')"
+              >Catálogo</a
+            >
+          </li>
+          <li>
+            <a href="nosotros.html" onclick="mostrarSeccion('nosotros')"
+              >Quiénes Somos</a
+            >
+          </li>
+          <li>
+            <a
+              href="contacto.html"
+              class="active-link"
+              onclick="mostrarSeccion('contacto')"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+
+        <button class="button-cart" onclick="toggleCarrito()">
+          🛒 <span id="count-cart">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-section" id="contacto">
+        <div class="section-header">
+          <p class="s-eyebrow">Hablemos</p>
+          <h2 class="s-title">Nuestros Vendedores</h2>
+          <div class="s-rule"></div>
+        </div>
+        <p class="section-text">
+          Envíos a todo el país · Stock permanente · Calidad garantizada
+        </p>
+
+        <section class="section-social-networks">
+          <div class="contact-grid">
+            <div class="cc">
+              <h3>Franco</h3>
+              <p>Vendedor</p>
+            </div>
+
+            <div class="cc">
+              <h3>Mateo</h3>
+              <p>Vendedor</p>
+            </div>
+
+            <div class="cc">
+              <h3>Gabriel</h3>
+              <p>Vendedor</p>
+            </div>
+          </div>
+
+          <div class="us-socials">
+            <a
+              href="https://www.facebook.com/profile.php?id=61582265163674"
+              target="_blank"
+              class="social-link"
+            >
+              <span class="social-icon">
+                <img
+                  src="./imagenes/logos/facebook.png"
+                  alt="Logo de Facebook"
+                />
+              </span>
+              Facebook
+            </a>
+            <a
+              href="https://instagram.com/elgauchodrink"
+              target="_blank"
+              class="social-link"
+            >
+              <span class="social-icon">
+                <img
+                  src="./imagenes/logos/instagram.png"
+                  alt="Logo de Instagram"
+                />
+              </span>
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/5491176588135"
+              target="_blank"
+              class="social-link"
+            >
+              <span class="social-icon">
+                <img
+                  src="./imagenes/logos/whatsapp.png"
+                  alt="Logo de WhatsApp"
+                />
+              </span>
+              WhatsApp
+            </a>
+            <a href="mailto:elgauchodrink@gmail.com" class="social-link">
+              <span class="social-icon">
+                <img src="./imagenes/logos/gmail.png" alt="Logo de Gmail" />
+              </span>
+              Gmail
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="f-logo">EL GAUCHO DRINK</div>
+      <div class="f-rule"></div>
+      <p>Vinos Mayorista · Buenos Aires · Argentina</p>
+      <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
+    </footer>
+    <script src="carrito.js"></script>
+  </body>
+</html>

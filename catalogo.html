@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gaucho Drink - Catálogo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="styleCatalogo.css" type="text/css" />
+    <link rel="stylesheet" href="styleFooter.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <!-- NAV -->
+      <nav class="nav-container nav-background">
+        <a href="./" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+          <img
+            src="./imagenes/logos/marca.png"
+            alt="Logo El Gaucho Drink"
+            class="nav-logo-img"
+          />
+        </a>
+
+        <ul class="nav-links nav-main-links" id="main-nav-links">
+          <li>
+            <a href="./" onclick="mostrarSeccion('inicio')">Inicio</a>
+          </li>
+          <li>
+            <a
+              href="catalogo.html"
+              class="active-link"
+              onclick="mostrarSeccion('catalogo')"
+              >Catálogo</a
+            >
+          </li>
+          <li>
+            <a href="nosotros.html" onclick="mostrarSeccion('nosotros')"
+              >Quiénes Somos</a
+            >
+          </li>
+          <li>
+            <a href="contacto.html" onclick="mostrarSeccion('contacto')"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+
+        <button class="button-cart" onclick="toggleCarrito()">
+          🛒 <span id="count-cart">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="brands-section" id="marcas">
+        <div class="section-header">
+          <p class="s-eyebrow">Cata completa</p>
+          <h2 class="s-title">Todas las Bodegas</h2>
+          <div class="s-rule"></div>
+        </div>
+        <p class="section-text">
+          Atención personalizada · Precios mayoristas · Caja x 6 unidades
+        </p>
+
+        <div class="filter-bar">
+          <button class="fbtn active" onclick="filtrarCatalogo('all', this)">
+            Todas
+          </button>
+          <button class="fbtn" onclick="filtrarCatalogo('CATENA', this)">
+            Catena
+          </button>
+          <button class="fbtn" onclick="filtrarCatalogo('RUTINI', this)">
+            Rutini
+          </button>
+          <button class="fbtn" onclick="filtrarCatalogo('LUIGI', this)">
+            Luigi Bosca
+          </button>
+          <button class="fbtn" onclick="filtrarCatalogo('SOTTANO', this)">
+            Sottano
+          </button>
+          <button class="fbtn" onclick="filtrarCatalogo('SPIRITS', this)">
+            Spirits
+          </button>
+        </div>
+
+        <div class="brands-grid" id="brandsGrid"></div>
+      </section>
+
+      <section class="seccion-oculta" id="productos-marca">
+        <div class="contenedor-boton-volver">
+          <div class="section-header">
+            <p class="s-eyebrow">Catalogo completo</p>
+            <h2 class="s-title" id="titulo-marca-seleccionada">Productos</h2>
+            <div class="s-rule"></div>
+          </div>
+          <button class="fbtn" onclick="volverAMarcas()">
+            ← Volver a Marcas
+          </button>
+        </div>
+        <div id="grilla-productos" class="brands-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="f-logo">EL GAUCHO DRINK</div>
+      <div class="f-rule"></div>
+      <p>Vinos Mayorista · Buenos Aires · Argentina</p>
+      <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
+    </footer>
+    <script src="productos.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="carrito.js"></script>
+  </body>
+</html>

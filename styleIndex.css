@@ -1,0 +1,300 @@
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg{
+    position: absolute;
+    inset: 0;
+    /* background: var(--bg-hero) center/cover no-repeat; */
+    filter: brightness(0.25) saturate(0.7);
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #0a08044d 0%, #0a080400 40%, #0a0804d9 100%);
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.hero-text {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-eyebrow{
+    font-family: var(--font-classic), serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold-main);
+    letter-spacing: 3px;
+}
+
+.hero h1{
+    font-family: var(--font-accent), serif;
+    font-size: clamp(3.7rem, 7.5vw, 8.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: .95;
+    letter-spacing: 8px;
+}
+
+.hero h1 .sub{
+    display: block;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 16px;
+    color: var(--gold-light);
+    margin-top: 12px;
+}
+
+.hero-rule{
+    width: 80px;
+    height: 1px;
+    background: var(--gold-main);
+    margin: 28px auto;
+    opacity: 0.6;
+}
+
+.hero-desc{
+    font-family: var(--font-classic), serif;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 540px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.hero-btns{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-gold{
+    background: var(--gold-main);
+    color: var(--bg-dark);
+    padding: 13px 36px;
+    font-family: var(--font-accent), serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-gold:hover{
+    background:var(--gold-light);
+    transform:translateY(-2px);
+}
+
+.btn-ghost{
+    background: transparent;color: var(--white);
+    padding: 13px 36px;
+    font-family: var(--font-accent), serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--text-muted);
+    transition: .3s;
+}
+
+.btn-ghost:hover{
+    border-color: var(--gold-main);
+    color: var(--gold-main);
+}
+
+.hero-stats{
+    display: flex;
+    justify-content: center;
+    gap: 72px;
+    z-index: 2;
+}
+
+.stat .n{
+    font-family: var(--font-classic), serif;
+    font-size: 2.8rem;
+    color: var(--gold-light);
+    line-height: 1;
+}
+
+.stat .l{
+    font-family: var(--font-accent), serif;
+    font-size: .6rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* =========================================
+   BODEGA SHOWCASES
+   ========================================= */
+
+.showcase{
+    padding:0;
+}
+
+.catena-showcase, .rutini-showcase, .luigi-showcase{
+    background: linear-gradient(135deg,#0a0700 0%,#1a1200 50%,#0a0700 100%);
+    padding:90px 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.showcase-inner.rev{
+    direction: rtl;
+}
+
+.showcase-inner.rev > *{
+    direction: ltr;
+}
+
+.sw-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.sw-brand-tag{
+    font-family: var(--font-classic), serif;
+    font-style: italic;
+    font-size: .95rem;
+    color: var(--gold-main);
+    letter-spacing: 3px;
+}
+
+.sw-title{
+    font-family: var(--font-accent), serif;
+    font-size: clamp(1.8rem,3vw,2.6rem);
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+.sw-desc{
+    font-family: var(--font-classic), serif;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+.sw-products{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.sw-item{
+    background: var(--transparent);
+    border: 1px solid var(--gold-dark);
+    padding:10px 14px;
+}
+
+.sw-item-name{
+    font-size:.78rem;
+    color:var(--text-muted);
+    font-family: var(--font-classic),serif;
+}
+
+.sw-item-price{
+    font-family: var(--font-classic),serif;
+    font-size:1.1rem;
+    color:var(--gold-light);
+    font-weight:700;
+}
+
+.sw-imgs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.sw-imgs img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: drop-shadow(0 12px 30px #000000b3);
+    transition: .3s;
+}
+
+.sw-imgs img:hover{
+    transform: scale(1.03);
+}
+
+.sw-imgs .big{
+    grid-column:span 2;
+    height: 280px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media(max-width:900px){
+    .brands-section,.catena-showcase,.rutini-showcase,.luigi-showcase,.featured-section,.contact-section{
+        padding:64px 20px;
+    }
+
+    .showcase-inner{
+        grid-template-columns: 1fr;
+        gap:36px;
+    }
+
+    .showcase-inner.rev{
+        direction:ltr;
+    }
+
+    .hero-stats{
+        gap:28px;
+    }
+
+    .hero-stats .n{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .hero-content{
+        margin-top: 30%;
+    }
+
+    .hero-stats {
+        gap: 45px;
+    }
+}

@@ -3,149 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>El Gaucho Drink - Catálogo de Bebidas</title>
+    <title>El Gaucho Drink - Vinos Mayorista</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Open+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="styleIndex.css" type="text/css" />
+    <link rel="stylesheet" href="styleFooter.css" type="text/css" />
   </head>
   <body>
-    <nav class="barra-navegacion">
-      <a href="#" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
-        <img
-          src="imagenes/logo.png"
-          alt="Logo El Gaucho Drink"
-          class="nav-logo-img"
-        />
-      </a>
+    <header>
+      <!-- NAV -->
+      <nav class="nav-container">
+        <a href="./" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+          <img
+            src="./imagenes/logos/marca.png"
+            alt="Logo El Gaucho Drink"
+            class="nav-logo-img"
+          />
+        </a>
 
-      <div class="enlaces-internos">
-        <button class="btn-interno" onclick="mostrarSeccion('marcas')">
-          Catálogo
+        <ul class="nav-links nav-main-links" id="main-nav-links">
+          <li>
+            <a href="./" onclick="mostrarSeccion('inicio')">Inicio</a>
+          </li>
+          <li>
+            <a href="catalogo.html" onclick="mostrarSeccion('catalogo')"
+              >Catálogo</a
+            >
+          </li>
+          <li>
+            <a href="nosotros.html" onclick="mostrarSeccion('nosotros')"
+              >Quiénes Somos</a
+            >
+          </li>
+          <li>
+            <a href="contacto.html" onclick="mostrarSeccion('contacto')"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+
+        <button class="button-cart" onclick="toggleCarrito()">
+          🛒 <span id="count-cart">0</span>
         </button>
-        <button class="btn-interno" onclick="mostrarSeccion('nosotros')">
-          Quiénes Somos
-        </button>
-        <button class="btn-interno" onclick="mostrarSeccion('contacto')">
-          Contacto
-        </button>
-      </div>
+      </nav>
+    </header>
 
-      <button class="boton-carrito" onclick="toggleCarrito()">
-        🛒 <span id="contador-carrito">0</span>
-      </button>
-    </nav>
-
-    <main class="contenedor-principal">
-      <section id="inicio" class="seccion-activa">
-        <header class="encabezado-hero">
-          <div class="hero-overlay">
-            <h1 class="encabezado-titulo">El Gaucho Drink</h1>
-            <p class="encabezado-subtitulo">Tradición y estilo en cada copa.</p>
-            <h2 class="frase-dorada">Los mejores productos al mejor precio</h2>
-            <a href="#menu-tarjetas" class="flecha-abajo">↓</a>
-          </div>
-        </header>
-
-        <div id="menu-tarjetas" class="inicio-catalogo-teaser">
-          <h2 class="catalogo-titulo-seccion">Nuestra Cava</h2>
-          <div class="teaser-grilla">
-            <div class="tarjeta-teaser" onclick="mostrarSeccion('marcas')">
-              <div class="imagen-tarjeta img-catalogo"></div>
-              <h3>Catálogo</h3>
-            </div>
-            <div class="tarjeta-teaser" onclick="mostrarSeccion('nosotros')">
-              <div class="imagen-tarjeta img-nosotros"></div>
-              <h3>Quiénes Somos</h3>
-            </div>
-            <div class="tarjeta-teaser" onclick="mostrarSeccion('contacto')">
-              <div class="imagen-tarjeta img-contacto"></div>
-              <h3>Contacto</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="nosotros" class="seccion-oculta">
-        <h2 class="catalogo-titulo-seccion">Quiénes Somos</h2>
-        <div class="contenido-texto">
-          <p>
-            Somos <strong>El Gaucho Drink</strong>, apasionados por el buen
-            beber y la tradición. Nos dedicamos a acercarte la mejor selección
-            de vinos, espumantes y destilados directo a tu mesa, garantizando
-            calidad, excelente precio y una atención personalizada.
-          </p>
-        </div>
-      </section>
-
-      <section id="contacto" class="seccion-oculta">
-        <h2 class="catalogo-titulo-seccion">Contacto</h2>
-        <div class="contenido-texto grilla-contacto">
-          <div class="tarjeta-contacto">
-            <h3 class="texto-bordo">📱 Celulares</h3>
-            <p>Contactos de Atención:</p>
-            <ul
-              id="lista-telefonos"
-              style="list-style: none; padding: 0; margin-top: 15px"
-            ></ul>
-          </div>
-          <div class="tarjeta-contacto">
-            <h3 class="texto-bordo">💬 Redes y Mensajería</h3>
-            <p>Instagram: <a id="link-ig" href="#" target="_blank"></a></p>
-            <p>
-              WhatsApp:
-              <a id="link-wpp-directo" href="#" target="_blank"
-                >Enviar mensaje directo</a
-              >
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div
+          class="hero-bg"
+          style="
+            background: url(&quot;./imagenes/ilustraciones/familia.jpeg&quot;)
+              center/cover no-repeat;
+          "
+        ></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hero-eyebrow">
+              Vinos Mayorista · Buenos Aires · Argentina
             </p>
+            <h1>EL GAUCHO<span class="sub">DRINK</span></h1>
+            <div class="hero-rule"></div>
+            <p class="hero-desc">
+              Productos seleccionados con amplio stock de las bodegas más
+              prestigiosas del país al mejor precio, con atención personalizada
+              y entrega SIN CARGO en la puerta de tu casa.
+            </p>
+            <div class="hero-btns">
+              <a
+                href="catalogo.html"
+                onclick="mostrarSeccion('catalogo')"
+                class="btn-gold"
+                >Ver Catálogo</a
+              >
+              <a
+                href="contacto.html"
+                onclick="mostrarSeccion('contacto')"
+                class="btn-ghost"
+                >Contactar Vendedor</a
+              >
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="n">20+</div>
+              <div class="l">Bodegas</div>
+            </div>
+            <div class="stat">
+              <div class="n">200+</div>
+              <div class="l">Productos</div>
+            </div>
+            <div class="stat">
+              <div class="n">3</div>
+              <div class="l">Vendedores</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="marcas" class="seccion-oculta">
-        <h2 class="catalogo-titulo-seccion">Nuestras Marcas</h2>
-        <h5 class="catalogo-venta-por-cajas">Venta por cajas</h5>
-        <div id="grilla-marcas" class="catalogo-grilla"></div>
-      </section>
-
-      <section id="productos" class="seccion-oculta">
-        <div class="contenedor-boton-volver">
-          <button class="boton-volver" onclick="mostrarSeccion('marcas')">
-            ← Volver a Marcas
-          </button>
-          <div class="contenedor-titulo-productos">
-            <h2 class="catalogo-titulo-seccion" id="titulo-marca-seleccionada">
-              Productos
-            </h2>
-            <h5 class="catalogo-venta-por-cajas">Venta por cajas</h5>
-          </div>
-        </div>
-        <div id="grilla-productos" class="catalogo-grilla"></div>
-      </section>
+      <!-- SHOWCASE -->
+      <section id="showcases-container"></section>
     </main>
 
-    <footer class="pie-pagina">
-      <p>
-        &copy; 2026 <strong>El Gaucho Drink</strong>. Todos los derechos
-        reservados.
-      </p>
+    <footer>
+      <div class="f-logo">EL GAUCHO DRINK</div>
+      <div class="f-rule"></div>
+      <p>Vinos Mayorista · Buenos Aires · Argentina</p>
+      <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
     </footer>
-
-    <aside id="panel-carrito" class="carrito-oculto">
-      <div class="carrito-header">
-        <h3>Tu Carrito</h3>
-        <button class="cerrar-carrito" onclick="toggleCarrito()">✖</button>
-      </div>
-      <div id="lista-carrito" class="carrito-items"></div>
-      <div class="carrito-footer">
-        <button class="boton-wpp-carrito" onclick="enviarPedidoWhatsApp()">
-          Consultar productos por WhatsApp
-        </button>
-      </div>
-    </aside>
-
     <script src="productos.js"></script>
+    <script src="showcase.js"></script>
+    <script src="carrito.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

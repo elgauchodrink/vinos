@@ -1,0 +1,84 @@
+/* =========================================
+   BRANDS
+   ========================================= */
+
+.us-section{
+    background: var(--bg-dark);
+    padding: 120px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.section-header{
+    text-align: center;
+}
+
+.s-eyebrow{
+    font-family: var(--font-classic), serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-main);
+    letter-spacing: 2px;
+}
+
+.s-title{
+    font-family: var(--font-accent), serif;
+    font-size: clamp(1.8rem,3.5vw,2.8rem);
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.s-rule{
+    width: 48px;
+    height: 1px;
+    background: var(--gold-main);
+    margin: 18px auto 0;
+    opacity: .7;
+}
+
+.section-text{
+    font-family: var(--font-classic), serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 600px;
+}
+
+.section-body{
+    max-width: 800px;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-classic), serif;
+    font-size: 1.5rem;
+}
+
+.company-name{
+    font-family: var(--font-accent), serif;
+    font-size: 1.2rem;
+    color: var(--gold-main);
+    letter-spacing: 2px;
+}
+
+.logo-img{
+    width: 500px;
+    height: auto;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 540px) {
+    .section-body { 
+        width: 100%; 
+    }
+    .logo-img { 
+        width: 100%; 
+    }
+}

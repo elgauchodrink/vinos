@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Gaucho Drink - Quiénes Somos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="styleNosotros.css" type="text/css" />
+    <link rel="stylesheet" href="styleFooter.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <!-- NAV -->
+      <nav class="nav-container nav-background">
+        <a href="./" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+          <img
+            src="./imagenes/logos/marca.png"
+            alt="Logo El Gaucho Drink"
+            class="nav-logo-img"
+          />
+        </a>
+
+        <ul class="nav-links nav-main-links" id="main-nav-links">
+          <li>
+            <a href="./" onclick="mostrarSeccion('inicio')">Inicio</a>
+          </li>
+          <li>
+            <a href="catalogo.html" onclick="mostrarSeccion('catalogo')"
+              >Catálogo</a
+            >
+          </li>
+          <li>
+            <a
+              href="nosotros.html"
+              class="active-link"
+              onclick="mostrarSeccion('nosotros')"
+              >Quiénes Somos</a
+            >
+          </li>
+          <li>
+            <a href="contacto.html" onclick="mostrarSeccion('contacto')"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+
+        <button class="button-cart" onclick="toggleCarrito()">
+          🛒 <span id="count-cart">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="us-section" id="nosotros">
+        <div class="section-header">
+          <p class="s-eyebrow">Nuestra Herencia</p>
+          <h2 class="s-title">Quiénes Somos</h2>
+          <div class="s-rule"></div>
+        </div>
+        <p class="section-text">
+          Tradición en cada botella · Selección Premium · El arte del buen beber
+        </p>
+        <div class="section-body">
+          <p>
+            Somos <label class="company-name">El Gaucho Drink</label>,
+            apasionados por el buen beber y la tradición. Ofrecemos una
+            experiencia de compra mayorista con atención personalizada,
+            garantizando un stock constante y una logística impecable para que
+            lo único que usted deba hacer sea descorchar y disfrutar.
+          </p>
+          <img
+            src="./imagenes/logos/marca.png"
+            alt="Logo El Gaucho Drink"
+            class="logo-img"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="f-logo">EL GAUCHO DRINK</div>
+      <div class="f-rule"></div>
+      <p>Vinos Mayorista · Buenos Aires · Argentina</p>
+      <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
+    </footer>
+    <script src="productos.js"></script>
+    <script src="carrito.js"></script>
+  </body>
+</html>

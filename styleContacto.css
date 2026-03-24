@@ -173,6 +173,7 @@
     align-items: center;
     width: 100%;
     justify-content: space-evenly;
+    gap: 50px;
 }
 
 /* =========================================
@@ -185,10 +186,6 @@
         flex-direction: column;
         gap: 20px;
         width: 70%;
-    }
-
-    .section-social-networks{
-        gap: 50px;
     }
 }
 

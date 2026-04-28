@@ -54,7 +54,7 @@ function renderizarShowcases() {
                         <h2 class="sw-title">${bodega.titulo}</h2>
                         <p class="sw-desc">${bodega.desc}</p>
                         <div class="sw-products">${listaProductosHTML}</div>
-                        <a href="catalogo.html#${bodega.id.toUpperCase()}" class="btn-gold">Ver Línea Completa</a>
+                        <a href="../pages/catalogo.html#${bodega.id.toUpperCase()}" class="btn-gold">Ver Línea Completa</a>
                     </div>
                     <div class="sw-imgs">
                         <img src="./imagenes/ilustraciones/${bodega.imagenes[0]}" alt="Escena" />

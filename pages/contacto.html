@@ -8,21 +8,21 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="./estilos/styleNavegacion.css"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="./estilos/styleContacto.css" type="text/css" />
-    <link rel="stylesheet" href="./estilos/styleFooter.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styleNavegacion.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styleContacto.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styleFooter.css" type="text/css" />
   </head>
   <body>
     <header>
       <!-- NAV -->
       <nav class="nav-container nav-background">
-        <a href="./" onclick="mostrarSeccion('inicio')" class="nav-logo-link">
+        <a
+          href="../index.html"
+          onclick="mostrarSeccion('inicio')"
+          class="nav-logo-link"
+        >
           <img
-            src="./imagenes/logos/marca.png"
+            src="../imagenes/logos/marca.png"
             alt="Logo El Gaucho Drink"
             class="nav-logo-img"
           />
@@ -30,7 +30,9 @@
 
         <ul class="nav-links nav-main-links" id="main-nav-links">
           <li>
-            <a href="./" onclick="mostrarSeccion('inicio')">Inicio</a>
+            <a href="../index.html" onclick="mostrarSeccion('inicio')"
+              >Inicio</a
+            >
           </li>
           <li>
             <a href="catalogo.html" onclick="mostrarSeccion('catalogo')"
@@ -95,7 +97,7 @@
             >
               <span class="social-icon">
                 <img
-                  src="./imagenes/logos/facebook.png"
+                  src="../imagenes/logos/facebook.png"
                   alt="Logo de Facebook"
                 />
               </span>
@@ -108,7 +110,7 @@
             >
               <span class="social-icon">
                 <img
-                  src="./imagenes/logos/instagram.png"
+                  src="../imagenes/logos/instagram.png"
                   alt="Logo de Instagram"
                 />
               </span>
@@ -121,7 +123,7 @@
             >
               <span class="social-icon">
                 <img
-                  src="./imagenes/logos/whatsapp.png"
+                  src="../imagenes/logos/whatsapp.png"
                   alt="Logo de WhatsApp"
                 />
               </span>
@@ -129,7 +131,7 @@
             </a>
             <a href="mailto:elgauchodrink@gmail.com" class="social-link">
               <span class="social-icon">
-                <img src="./imagenes/logos/gmail.png" alt="Logo de Gmail" />
+                <img src="../imagenes/logos/gmail.png" alt="Logo de Gmail" />
               </span>
               Gmail
             </a>
@@ -144,6 +146,6 @@
       <p>Vinos Mayorista · Buenos Aires · Argentina</p>
       <p>&copy; 2026 El Gaucho Drink. Todos los derechos reservados.</p>
     </footer>
-    <script src="scripts/carrito.js"></script>
+    <script src="../scripts/carrito.js"></script>
   </body>
 </html>
